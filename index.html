@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mikusiek</title>
+    <link rel="icon" type="image/png" href="avatar.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<header>
+    <div class="background-png"></div>
+    <nav>
+        <div class="logo">
+            <img src="avatar.png" alt="Avatar" class="nav-avatar">
+            Mikusiek
+        </div>
+        <ul>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">O Mnie</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
+        <div class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <div class="hero">
+        <h1 data-aos="fade-up" data-aos-delay="200">Witaj w Moim Świecie</h1>
+        <p data-aos="fade-up" data-aos-delay="400">Java Developer, Project Creator</p>
+        <div class="scroll-down" data-aos="fade-up" data-aos-delay="600" id="scroll-down">
+            <span>Przewiń w dół</span>
+            <div class="arrow"></div>
+        </div>
+    </div>
+</header>
+
+<section id="about" class="about">
+    <h2 data-aos="fade-up">O Mnie</h2>
+    <div class="bio" data-aos="fade-up" data-aos-delay="200">
+        <img src="avatar.png" alt="Moje Zdjęcie">
+        <p>Cześć! Jestem pasjonatem designu i programowania. Uwielbiam tworzyć nowoczesne strony internetowe, które nie tylko wyglądają świetnie, ale także są funkcjonalne i przyjazne dla użytkownika.</p>
+    </div>
+</section>
+
+<section id="portfolio" class="portfolio">
+    <h2 data-aos="fade-up">Portfolio</h2>
+    <div class="projects">
+        <div class="project" data-aos="zoom-in" data-aos-delay="200">
+            <div class="project-image">
+                <img src="project1.jpg" alt="Projekt 1">
+            </div>
+            <h3>WinterMc.pl (+150)</h3>
+            <p>Krótki opis projektu.</p>
+        </div>
+        <div class="project" data-aos="zoom-in" data-aos-delay="400">
+            <div class="project-image">
+                <img src="project2.jpg" alt="Projekt 2">
+            </div>
+            <h3>WolfHub.pl (+460)</h3>
+            <p>Krótki opis projektu.</p>
+        </div>
+    </div>
+</section>
+
+<footer id="contact">
+    <div class="footer-top">
+        <div class="social-media" data-aos="fade-up" data-aos-delay="200">
+            <a href="https://github.com/mojprofil" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://discord.gg/mojlink" target="_blank"><i class="fab fa-discord"></i></a>
+            <a href="https://youtube.com/mojprofil" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Mikusiek. Wszystkie prawa zastrzeżone.</p>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
