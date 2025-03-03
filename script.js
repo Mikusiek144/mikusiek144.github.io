@@ -13,7 +13,7 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
 
 // Klikalna strzałka
 document.getElementById('scroll-down').addEventListener('click', () => {
-    document.getElementById('about').scrollIntoView({
+    document.getElementById('portfolio').scrollIntoView({
         behavior: 'smooth',
         block: 'start'
     });
