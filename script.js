@@ -1,44 +1,63 @@
-// Płynne przewijanie do sekcji
-document.querySelectorAll('nav ul li a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
-        targetSection.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-    });
-});
-
-// Klikalna strzałka
-document.getElementById('scroll-down').addEventListener('click', () => {
-    document.getElementById('portfolio').scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-    });
-});
-
-// Inicjalizacja AOS (Animate On Scroll)
+// Inicjalizacja AOS (Animacje)
 AOS.init({
-    duration: 800,
-    easing: 'ease-in-out',
-    once: true
+    duration: 1000,
+    once: true,
 });
 
-// Responsywne menu nawigacyjne
-const navToggle = document.querySelector('.nav-toggle');
-const nav = document.querySelector('nav ul');
+// Niestandardowy kursor
+const customCursor = document.querySelector(".custom-cursor");
 
-navToggle.addEventListener('click', () => {
-    nav.classList.toggle('active');
-    navToggle.classList.toggle('active');
+// Obsługa ruchu myszy
+document.addEventListener("mousemove", function (e) {
+    customCursor.style.left = `${e.clientX}px`;
+    customCursor.style.top = `${e.clientY}px`;
 });
 
-// Zamknij menu po kliknięciu na link
-document.querySelectorAll('nav ul li a').forEach(link => {
-    link.addEventListener('click', () => {
-        nav.classList.remove('active');
-        navToggle.classList.remove('active');
+// Obsługa najechania na link
+const links = document.querySelectorAll("a");
+links.forEach(link => {
+    link.addEventListener("mouseenter", function () {
+        customCursor.style.backgroundImage = "url('link-cursor.cur')";
+    });
+    link.addEventListener("mouseleave", function () {
+        customCursor.style.backgroundImage = "url('default-cursor.cur')";
     });
 });
+
+// Przewijanie strony po kliknięciu strzałki
+const scrollDown = document.getElementById("scroll-down");
+scrollDown.addEventListener("click", () => {
+    window.scrollTo({
+        top: document.getElementById("portfolio").offsetTop,
+        behavior: "smooth"
+    });
+});
+
+// Płynne przewijanie do sekcji portfolio po kliknięciu w "Projekty"
+document.querySelectorAll('nav ul li a[href="#portfolio"]').forEach(link => {
+    link.addEventListener("click", function (e) {
+        e.preventDefault(); // Zapobiega domyślnej akcji linku
+        const portfolioSection = document.getElementById("portfolio");
+        if (portfolioSection) {
+            portfolioSection.scrollIntoView({
+                behavior: "smooth" // Płynne przewijanie
+            });
+        }
+    });
+});
+
+// Ograniczenie przewijania strony
+function limitScroll() {
+    const footer = document.querySelector("footer");
+    const maxScroll = footer.offsetTop + footer.offsetHeight - window.innerHeight;
+
+    if (window.scrollY > maxScroll) {
+        window.scrollTo({
+            top: maxScroll,
+            behavior: "auto"
+        });
+    }
+}
+
+// Nasłuchuj zdarzenia przewijania
+window.addEventListener("scroll", limitScroll);
