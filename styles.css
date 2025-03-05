@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: none !important; /* Ukryj kursor systemowy na całej stronie */
 }
 
 body {
@@ -13,6 +14,106 @@ body {
     overflow-x: hidden;
 }
 
+/* Niestandardowy kursor */
+.custom-cursor {
+    position: fixed;
+    width: 32px; /* Rozmiar kursora */
+    height: 32px;
+    background-image: url('default-cursor.cur'); /* Obrazek kursora */
+    background-size: cover;
+    pointer-events: none; /* Zapobiega interakcji z kursorem */
+    z-index: 10000; /* Upewnij się, że kursor jest na wierzchu */
+    transform: translate(-50%, -50%); /* Wyśrodkowanie kursora */
+}
+
+/* Kursor podczas najechania na link */
+a:hover ~ .custom-cursor {
+    background-image: url('link-cursor.cur'); /* Obrazek kursora dla linków */
+}
+
+/* Smuga po kliknięciu */
+.smuga {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.5); /* Kolor smugi */
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    animation: smugAnimation 0.5s ease-out;
+}
+
+@keyframes smugAnimation {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+}
+
+/* Kontrolka głośności */
+.volume-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Większy odstęp między elementami */
+    background: rgba(26, 26, 26, 0.8);
+    padding: 20px; /* Większy padding */
+    border-radius: 30px; /* Zaokrąglenie krawędzi */
+    z-index: 1000;
+}
+
+.volume-control button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem; /* Jeszcze większy rozmiar czcionki */
+    cursor: pointer;
+    width: 50px; /* Jeszcze większa szerokość przycisków */
+    height: 50px; /* Jeszcze większa wysokość przycisków */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.volume-control button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.volume-control input[type="range"] {
+    width: 150px; /* Jeszcze większa szerokość suwaka */
+    cursor: not-allowed; /* Wyłącza możliwość przeciągania */
+    opacity: 0.7; /* Lekko przyciemnia suwak */
+}
+
+.volume-control button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.volume-control input[type="range"] {
+    width: 120px; /* Większa szerokość suwaka */
+    cursor: not-allowed; /* Wyłącza możliwość przeciągania */
+    opacity: 0.7; /* Lekko przyciemnia suwak */
+}
+
+.volume-control button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.volume-control input[type="range"] {
+    width: 100px;
+    cursor: not-allowed; /* Wyłącza możliwość przeciągania */
+    opacity: 0.7; /* Lekko przyciemnia suwak */
+}
+
+/* Reszta Twoich stylów */
 header {
     position: relative;
     height: 100vh;
@@ -80,13 +181,15 @@ header p {
     flex-direction: column;
     align-items: center;
     margin-top: 2rem;
-    cursor: pointer;
+    cursor: pointer; /* Umożliwia kliknięcie */
+    pointer-events: auto; /* Przywraca możliwość interakcji */
 }
 
 .scroll-down span {
     font-size: 1rem;
     margin-bottom: 0.5rem;
     color: #fff;
+    pointer-events: none; /* Wyłącza interakcję z napisem */
 }
 
 .scroll-down .arrow {
@@ -96,6 +199,7 @@ header p {
     border-width: 2px 2px 0 0;
     transform: rotate(135deg);
     animation: bounce 2s infinite;
+    pointer-events: none; /* Wyłącza interakcję ze strzałką */
 }
 
 @keyframes float {
@@ -296,7 +400,7 @@ nav ul li a:hover::after {
 }
 
 .about .bio img {
-    width: 150x;
+    width: 150px;
     height: 150px;
     border-radius: 50%;
     border: 3px solid #808080;
