@@ -4,24 +4,9 @@ AOS.init({
     once: true,
 });
 
-// Niestandardowy kursor
-const customCursor = document.querySelector(".custom-cursor");
-
-// Obsługa ruchu myszy
-document.addEventListener("mousemove", function (e) {
-    customCursor.style.left = `${e.clientX}px`;
-    customCursor.style.top = `${e.clientY}px`;
-});
-
-// Obsługa najechania na link
-const links = document.querySelectorAll("a");
-links.forEach(link => {
-    link.addEventListener("mouseenter", function () {
-        customCursor.style.backgroundImage = "url('link-cursor.cur')";
-    });
-    link.addEventListener("mouseleave", function () {
-        customCursor.style.backgroundImage = "url('default-cursor.cur')";
-    });
+// Blokada prawego przycisku myszy (bez komunikatu)
+document.addEventListener("contextmenu", function (e) {
+    e.preventDefault(); // Zapobiega otwarciu menu kontekstowego
 });
 
 // Przewijanie strony po kliknięciu strzałki
