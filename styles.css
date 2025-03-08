@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: none !important; /* Ukryj kursor systemowy na całej stronie */
 }
 
 body {
@@ -12,105 +11,6 @@ body {
     color: #fff;
     line-height: 1.6;
     overflow-x: hidden;
-}
-
-/* Niestandardowy kursor */
-.custom-cursor {
-    position: fixed;
-    width: 32px; /* Rozmiar kursora */
-    height: 32px;
-    background-image: url('default-cursor.cur'); /* Obrazek kursora */
-    background-size: cover;
-    pointer-events: none; /* Zapobiega interakcji z kursorem */
-    z-index: 10000; /* Upewnij się, że kursor jest na wierzchu */
-    transform: translate(-50%, -50%); /* Wyśrodkowanie kursora */
-}
-
-/* Kursor podczas najechania na link */
-a:hover ~ .custom-cursor {
-    background-image: url('link-cursor.cur'); /* Obrazek kursora dla linków */
-}
-
-/* Smuga po kliknięciu */
-.smuga {
-    position: fixed;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.5); /* Kolor smugi */
-    border-radius: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 0;
-    animation: smugAnimation 0.5s ease-out;
-}
-
-@keyframes smugAnimation {
-    0% {
-        transform: translate(-50%, -50%) scale(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(2);
-        opacity: 0;
-    }
-}
-
-/* Kontrolka głośności */
-.volume-control {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Większy odstęp między elementami */
-    background: rgba(26, 26, 26, 0.8);
-    padding: 20px; /* Większy padding */
-    border-radius: 30px; /* Zaokrąglenie krawędzi */
-    z-index: 1000;
-}
-
-.volume-control button {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 2rem; /* Jeszcze większy rozmiar czcionki */
-    cursor: pointer;
-    width: 50px; /* Jeszcze większa szerokość przycisków */
-    height: 50px; /* Jeszcze większa wysokość przycisków */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: background 0.3s ease;
-}
-
-.volume-control button:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.volume-control input[type="range"] {
-    width: 150px; /* Jeszcze większa szerokość suwaka */
-    cursor: not-allowed; /* Wyłącza możliwość przeciągania */
-    opacity: 0.7; /* Lekko przyciemnia suwak */
-}
-
-.volume-control button:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.volume-control input[type="range"] {
-    width: 120px; /* Większa szerokość suwaka */
-    cursor: not-allowed; /* Wyłącza możliwość przeciągania */
-    opacity: 0.7; /* Lekko przyciemnia suwak */
-}
-
-.volume-control button:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.volume-control input[type="range"] {
-    width: 100px;
-    cursor: not-allowed; /* Wyłącza możliwość przeciągania */
-    opacity: 0.7; /* Lekko przyciemnia suwak */
 }
 
 /* Reszta Twoich stylów */
