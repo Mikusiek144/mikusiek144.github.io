@@ -7,12 +7,10 @@
     <link rel="icon" type="image/png" href="avatar.png">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@next/dist/aos. css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-<div class="custom-cursor"></div>
-
 <header>
     <div class="background-png"></div>
     <nav>
@@ -79,21 +77,8 @@
         once: true,
     });
 
-    const customCursor = document.querySelector(".custom-cursor");
-
-    document.addEventListener("mousemove", function (e) {
-        customCursor.style.left = `${e.clientX}px`;
-        customCursor.style.top = `${e.clientY}px`;
-    });
-
-    const links = document.querySelectorAll("a");
-    links.forEach(link => {
-        link.addEventListener("mouseenter", function () {
-            customCursor.style.backgroundImage = "url('link-cursor.cur')";
-        });
-        link.addEventListener("mouseleave", function () {
-            customCursor.style.backgroundImage = "url('default-cursor.cur')";
-        });
+    document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
     });
 
     const scrollDown = document.getElementById("scroll-down");
