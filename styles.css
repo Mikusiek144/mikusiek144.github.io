@@ -212,14 +212,14 @@ nav ul li a:hover::after {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-.portfolio, .about {
+.project, .about {
     padding: 6rem 2rem;
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.portfolio h2, .about h2 {
+.project h2, .about h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
     color: #fff;
@@ -227,7 +227,7 @@ nav ul li a:hover::after {
     display: inline-block;
 }
 
-.portfolio h2::after, .about h2::after {
+.project h2::after, .about h2::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -241,41 +241,6 @@ nav ul li a:hover::after {
 
 .portfolio h2:hover::after, .about h2:hover::after {
     transform: scaleX(1);
-}
-
-.projects {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 3rem;
-}
-
-/* Ogólny styl dla projektów */
-.project {
-    background: #262626;
-    padding: 1.5rem; /* Zmniejszony padding */
-    border-radius: 10px;
-    width: 30%; /* Zmniejszona szerokość kafelka */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 1rem; /* Dodany margines */
-}
-
-/* Styl dla obrazka w projekcie */
-.project-image img {
-    width: 100%; /* Obrazek wypełnia kontener */
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-/* Specyficzny styl dla kafelka "WojanMC" */
-.project:nth-child(2) {
-    width: 25%; /* Jeszcze mniejsza szerokość */
-    padding: 1rem; /* Mniejszy padding */
-}
-
-.project:nth-child(2) .project-image img {
-    max-width: 100%; /* Obrazek nie przekroczy szerokości kontenera */
-    height: auto; /* Zachowaj proporcje */
 }
 
 .about .bio {
