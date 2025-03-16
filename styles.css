@@ -250,45 +250,32 @@ nav ul li a:hover::after {
     gap: 3rem;
 }
 
+/* Ogólny styl dla projektów */
 .project {
     background: #262626;
-    padding: 2rem;
+    padding: 1.5rem; /* Zmniejszony padding */
     border-radius: 10px;
-    width: 45%;
+    width: 30%; /* Zmniejszona szerokość kafelka */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 1rem; /* Dodany margines */
 }
 
-.project:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(255, 221, 87, 0.3);
-}
-
-.project-image {
-    overflow: hidden;
-    border-radius: 10px;
-    position: relative;
-}
-
+/* Styl dla obrazka w projekcie */
 .project-image img {
-    width: 100%;
+    width: 100%; /* Obrazek wypełnia kontener */
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
 
-.project:hover .project-image img {
-    transform: scale(1.1);
+/* Specyficzny styl dla kafelka "WojanMC" */
+.project:nth-child(2) {
+    width: 25%; /* Jeszcze mniejsza szerokość */
+    padding: 1rem; /* Mniejszy padding */
 }
 
-.project h3 {
-    margin: 1.5rem 0 1rem;
-    font-size: 1.75rem;
-    color: #fff;
-}
-
-.project p {
-    font-size: 1.1rem;
-    color: #ccc;
-    line-height: 1.6;
+.project:nth-child(2) .project-image img {
+    max-width: 100%; /* Obrazek nie przekroczy szerokości kontenera */
+    height: auto; /* Zachowaj proporcje */
 }
 
 .about .bio {
