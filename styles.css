@@ -13,7 +13,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Reszta Twoich stylów */
+/* Header */
 header {
     position: relative;
     height: 100vh;
@@ -81,15 +81,15 @@ header p {
     flex-direction: column;
     align-items: center;
     margin-top: 2rem;
-    cursor: pointer; /* Umożliwia kliknięcie */
-    pointer-events: auto; /* Przywraca możliwość interakcji */
+    cursor: pointer;
+    pointer-events: auto;
 }
 
 .scroll-down span {
     font-size: 1rem;
     margin-bottom: 0.5rem;
     color: #fff;
-    pointer-events: none; /* Wyłącza interakcję z napisem */
+    pointer-events: none;
 }
 
 .scroll-down .arrow {
@@ -99,7 +99,7 @@ header p {
     border-width: 2px 2px 0 0;
     transform: rotate(135deg);
     animation: bounce 2s infinite;
-    pointer-events: none; /* Wyłącza interakcję ze strzałką */
+    pointer-events: none;
 }
 
 @keyframes float {
@@ -120,6 +120,7 @@ header p {
     }
 }
 
+/* Nawigacja */
 nav {
     display: flex;
     justify-content: space-between;
@@ -297,41 +298,14 @@ nav ul li a:hover::after {
     line-height: 1.6;
 }
 
-.project p {
-    font-size: 1.1rem;
-    color: #ccc;
-    line-height: 1.6;
-}
-
-.about .bio {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.about .bio img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px solid #808080;
-}
-
-.about .bio p {
-    max-width: 600px;
-    font-size: 1.2rem;
-    text-align: left;
-    color: #fff;
-}
-
+/* Stopka */
 footer {
     background: #262626;
     padding: 4rem 2rem 2rem;
     text-align: center;
     position: relative;
     z-index: 1;
-    border-top: 2px solid #444; /* Linia oddzielająca w kolorze pasującym do tła */
+    border-top: 2px solid #444;
 }
 
 .footer-top {
@@ -378,15 +352,6 @@ footer {
 
     .project {
         width: 100%;
-    }
-
-    .about .bio {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about .bio img {
-        margin-bottom: 1rem;
     }
 
     .nav-toggle {
