@@ -786,51 +786,60 @@ footer::before {
     }
 }
 
-/* Style dla projektu WojanMC */
+/* Style dla projektu WojanMC - powiększone elementy */
 .wojanmc-project {
-    transform: scale(1.1);
-    max-width: 320px;
-    z-index: 2;
-    margin: 2rem auto; /* Dodane wyśrodkowanie */
+    transform: scale(1.15) !important; /* Zwiększony rozmiar całego kafelka */
+    max-width: 340px !important; /* Większa maksymalna szerokość */
+    z-index: 3 !important; /* Zwiększony z-index, aby kafelek był na wierzchu */
+    margin: 2rem auto !important; /* Lepsze wyśrodkowanie */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 25px rgba(108, 99, 255, 0.3) !important; /* Mocniejszy cień */
 }
 
 .wojanmc-image {
-    position: relative;
-    overflow: hidden; /* Zapobiega wyjściu obrazu poza kontener */
-    border-radius: 8px; /* Dodane zaokrąglone rogi */
+    position: relative !important;
+    overflow: hidden !important; /* Zapobiega wyjściu obrazu poza kontener */
+    border-radius: calc(var(--border-radius) - 5px) !important;
+    aspect-ratio: 16 / 9 !important; /* Zachowanie proporcji obrazu */
 }
 
 .wojanmc-image img {
-    width: 100%;
-    height: auto;
-    transform: scale(1.2); /* Zwiększone z 1.05 na 1.2 dla lepszego efektu powiększenia */
-    transition: transform 0.5s ease; /* Dodana animacja przy najechaniu */
-    box-shadow: 0 0 25px rgba(108, 99, 255, 0.5); /* Zwiększona intensywność cienia */
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transform: scale(1.25) !important; /* Znacznie powiększony obraz */
+    transition: transform 0.8s cubic-bezier(0.33, 1, 0.68, 1) !important; /* Płynna animacja */
+    box-shadow: 0 0 25px rgba(108, 99, 255, 0.4) !important; /* Mocniejszy cień */
 }
 
-/* Dodany efekt hover dla zdjęcia */
-.wojanmc-image:hover img {
-    transform: scale(1.3);
+/* Efekt hover dla zdjęcia */
+.wojanmc-project:hover .wojanmc-image img {
+    transform: scale(1.35) !important; /* Dodatkowe powiększenie przy najechaniu */
 }
 
-.project-badge {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    z-index: 2;
+/* Powiększony efekt hover dla całego kafelka */
+.wojanmc-project:hover {
+    transform: translateY(-20px) scale(1.2) !important; /* Większy skok w górę i powiększenie */
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(108, 99, 255, 0.4) !important; /* Mocniejszy cień */
 }
 
+/* Powiększone napisy */
 .wojanmc-project h3 {
-    font-size: 2.2rem;
-    margin-top: 1rem; /* Dodany odstęp od obrazka */
-    color: var(--primary-color); /* Dodany kolor zgodny z motywem */
+    font-size: 2.2rem !important;
+    margin-top: 1.2rem !important;
+}
+
+.wojanmc-project p {
+    font-size: 1.15rem !important;
+}
+
+/* Wyróżniona odznaka */
+.wojanmc-project .project-badge {
+    padding: 0.6rem 1.2rem !important;
+    font-size: 1rem !important;
+    top: -12px !important;
+    right: -12px !important;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important;
     
     }
 }
