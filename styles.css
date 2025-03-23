@@ -791,17 +791,26 @@ footer::before {
     transform: scale(1.1);
     max-width: 320px;
     z-index: 2;
+    margin: 2rem auto; /* Dodane wyśrodkowanie */
 }
 
 .wojanmc-image {
     position: relative;
+    overflow: hidden; /* Zapobiega wyjściu obrazu poza kontener */
+    border-radius: 8px; /* Dodane zaokrąglone rogi */
 }
 
 .wojanmc-image img {
     width: 100%;
     height: auto;
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(108, 99, 255, 0.3);
+    transform: scale(1.2); /* Zwiększone z 1.05 na 1.2 dla lepszego efektu powiększenia */
+    transition: transform 0.5s ease; /* Dodana animacja przy najechaniu */
+    box-shadow: 0 0 25px rgba(108, 99, 255, 0.5); /* Zwiększona intensywność cienia */
+}
+
+/* Dodany efekt hover dla zdjęcia */
+.wojanmc-image:hover img {
+    transform: scale(1.3);
 }
 
 .project-badge {
@@ -820,6 +829,8 @@ footer::before {
 
 .wojanmc-project h3 {
     font-size: 2.2rem;
+    margin-top: 1rem; /* Dodany odstęp od obrazka */
+    color: var(--primary-color); /* Dodany kolor zgodny z motywem */
     
     }
 }
