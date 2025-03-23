@@ -785,3 +785,41 @@ footer::before {
         background: var(--text-primary);
     }
 }
+
+/* Style dla projektu WojanMC */
+.wojanmc-project {
+    transform: scale(1.1);
+    max-width: 320px;
+    z-index: 2;
+}
+
+.wojanmc-image {
+    position: relative;
+}
+
+.wojanmc-image img {
+    width: 100%;
+    height: auto;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(108, 99, 255, 0.3);
+}
+
+.project-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.wojanmc-project h3 {
+    font-size: 2.2rem;
+    
+    }
+}
