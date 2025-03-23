@@ -805,26 +805,41 @@ footer::before {
     flex-wrap: wrap !important;
 }
 
-/* Ulepszenie kafelka WojanMC */
+/* Ulepszenie kafelka WojanMC - bez zmiany */
 .wojanmc-project {
     margin: 0 auto !important;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 0 15px rgba(108, 99, 255, 0.2) !important;
     transition: all 0.4s ease !important;
 }
 
-/* Ulepszenie i zmniejszenie zdjęcia */
+/* Poprawione wyświetlanie zdjęcia - całe widoczne */
 .wojanmc-image img {
-    width: 100% !important;
+    width: auto !important; /* Zmiana z 100% na auto */
     height: auto !important;
-    object-fit: contain !important; /* Zmieniono z cover na contain aby zachować proporcje */
-    transform: scale(0.9) !important; /* Zmniejszony obraz zamiast powiększonego */
+    max-width: 80% !important; /* Dodane ograniczenie szerokości */
+    max-height: 100% !important; /* Dodane ograniczenie wysokości */
+    object-fit: contain !important; /* Zachowanie contain */
+    transform: scale(1) !important; /* Neutralny rozmiar */
     transition: transform 0.5s ease !important;
     border-radius: calc(var(--border-radius) - 5px) !important;
+    margin: 0 auto !important; /* Wyśrodkowanie */
+    display: block !important; /* Zapewnienie poprawnego centrowania */
+}
+
+/* Kontener obrazu z dodanym padding i wyśrodkowaniem */
+.wojanmc-image {
+    overflow: hidden !important; 
+    border-radius: calc(var(--border-radius) - 5px) !important;
+    text-align: center !important; /* Wyśrodkowanie zawartości */
+    padding: 10px !important; /* Dodanie odstępu wokół obrazka */
+    display: flex !important; /* Używanie flexboxa */
+    justify-content: center !important; /* Wyśrodkowanie poziome */
+    align-items: center !important; /* Wyśrodkowanie pionowe */
 }
 
 /* Efekt hover dla zdjęcia - delikatniejszy */
 .wojanmc-project:hover .wojanmc-image img {
-    transform: scale(1.0) !important; /* Normalna wielkość przy najechaniu zamiast powiększenia */
+    transform: scale(1.1) !important; /* Delikatne powiększenie przy najechaniu */
 }
 
 /* Subtelne ulepszenie odznaki */
