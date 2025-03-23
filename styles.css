@@ -799,8 +799,6 @@ footer::before {
 }
 
 /* Kontener dla projektów - modyfikacja dla lepszego wyśrodkowania */
-/* Wyśrodkowanie kontenera projektów */
-/* Wyśrodkowanie kontenera projektów */
 .projects {
     display: flex !important;
     justify-content: center !important;
@@ -814,30 +812,19 @@ footer::before {
     transition: all 0.4s ease !important;
 }
 
-/* Ulepszenie i umiarkowane powiększenie zdjęcia */
+/* Ulepszenie i zmniejszenie zdjęcia */
 .wojanmc-image img {
     width: 100% !important;
     height: auto !important;
-    object-fit: cover !important;
-    transform: scale(1.2) !important; /* Umiarkowanie powiększony obraz */
+    object-fit: contain !important; /* Zmieniono z cover na contain aby zachować proporcje */
+    transform: scale(0.9) !important; /* Zmniejszony obraz zamiast powiększonego */
     transition: transform 0.5s ease !important;
     border-radius: calc(var(--border-radius) - 5px) !important;
 }
 
-/* Kontener obrazu - zapobiega wyjściu poza granice */
-.wojanmc-image {
-    overflow: hidden !important; 
-    border-radius: calc(var(--border-radius) - 5px) !important;
-}
-
-/* Efekt hover dla kafelka i zdjęcia */
-.wojanmc-project:hover {
-    transform: translateY(-10px) !important;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), 0 0 20px rgba(108, 99, 255, 0.3) !important;
-}
-
+/* Efekt hover dla zdjęcia - delikatniejszy */
 .wojanmc-project:hover .wojanmc-image img {
-    transform: scale(1.3) !important; /* Delikatniejsze powiększenie przy najechaniu */
+    transform: scale(1.0) !important; /* Normalna wielkość przy najechaniu zamiast powiększenia */
 }
 
 /* Subtelne ulepszenie odznaki */
