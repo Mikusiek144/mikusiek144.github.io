@@ -807,25 +807,24 @@ footer::before {
     gap: 3rem !important; /* Większa przestrzeń między projektami */
 }
 
-.wojanmc-image {
-    position: relative !important;
-    overflow: hidden !important; /* Zapobiega wyjściu obrazu poza kontener */
-    border-radius: calc(var(--border-radius) - 5px) !important;
-    aspect-ratio: 16 / 9 !important; /* Zachowanie proporcji obrazu */
-}
-
+/* Style wyłącznie dla zdjęcia w projekcie WojanMC */
 .wojanmc-image img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    transform: scale(1.35) !important; /* Jeszcze bardziej powiększony obraz */
+    transform: scale(1.5) !important; /* Znacznie powiększony obraz */
     transition: transform 0.8s cubic-bezier(0.33, 1, 0.68, 1) !important; /* Płynna animacja */
-    box-shadow: 0 0 35px rgba(108, 99, 255, 0.5) !important; /* Mocniejszy cień */
 }
 
-/* Efekt hover dla zdjęcia */
+/* Kontener obrazu - zapobiega wyjściu poza granice */
+.wojanmc-image {
+    overflow: hidden !important; 
+    border-radius: calc(var(--border-radius) - 5px) !important;
+}
+
+/* Efekt hover tylko dla zdjęcia */
 .wojanmc-project:hover .wojanmc-image img {
-    transform: scale(1.45) !important; /* Jeszcze większe powiększenie przy najechaniu */
+    transform: scale(1.6) !important; /* Jeszcze większe powiększenie przy najechaniu */
 }
 
 /* Powiększony efekt hover dla całego kafelka */
