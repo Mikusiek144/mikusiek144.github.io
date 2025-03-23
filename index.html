@@ -36,20 +36,24 @@
         </div>
     </div>
 </header>
-
 <section class="portfolio" id="portfolio">
     <h2>Projekty</h2>
     <div class="projects">
-        <div class="project" data-aos="zoom-in" data-aos-delay="400">
-            <div class="project-image">
-                <img src="project2.jpg" alt="Projekt 2">
+        <div class="project wojanmc-project" data-aos="zoom-in" data-aos-delay="400">
+            <div class="project-image wojanmc-image">
+                <img src="project2.jpg" alt="WojanMC">
+                <span class="project-badge">27k+</span>
             </div>
-            <h3>WojanMC (27k+)</h3>
+            <h3>WojanMC</h3>
             <p>Ranga Pomocnik+</p>
+            <div class="project-links">
+                <a href="#" class="project-link">
+                    <i class="fas fa-external-link-alt"></i> Odwiedź serwer
+                </a>
+            </div>
         </div>
     </div>
 </section>
-
 <footer id="contact">
     <div class="footer-top">
         <div class="social-media" data-aos="fade-up" data-aos-delay="200">
@@ -62,18 +66,15 @@
         <p> 2025 Mikusiek144</p>
     </div>
 </footer>
-
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     AOS.init({
         duration: 1000,
         once: true,
     });
-
     document.addEventListener("contextmenu", function (e) {
         e.preventDefault();
     });
-
     const scrollDown = document.getElementById("scroll-down");
     scrollDown.addEventListener("click", () => {
         window.scrollTo({
@@ -81,7 +82,6 @@
             behavior: "smooth"
         });
     });
-
     document.querySelectorAll('nav ul li a[href="#portfolio"]').forEach(link => {
         link.addEventListener("click", function (e) {
             e.preventDefault();
@@ -93,11 +93,9 @@
             }
         });
     });
-
     function limitScroll() {
         const footer = document.querySelector("footer");
         const maxScroll = footer.offsetTop + footer.offsetHeight - window.innerHeight;
-
         if (window.scrollY > maxScroll) {
             window.scrollTo({
                 top: maxScroll,
@@ -105,7 +103,6 @@
             });
         }
     }
-
     window.addEventListener("scroll", limitScroll);
 </script>
 </body>
