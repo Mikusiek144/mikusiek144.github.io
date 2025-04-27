@@ -293,211 +293,94 @@ nav ul li a:hover::after {
 
 /* Nowoczesna sekcja Portfolio z efektem 3D */
 .portfolio {
-    padding: 8rem 2rem 6rem;
-    text-align: center;
-    max-width: 1400px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.portfolio::before {
-    content: '';
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
-    top: 10%;
-    left: -150px;
-    opacity: 0.1;
-    filter: blur(50px);
-    border-radius: 50%;
-    z-index: -1;
-}
-
-.portfolio::after {
-    content: '';
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    background: radial-gradient(circle, var(--secondary-color) 0%, transparent 70%);
-    bottom: 10%;
-    right: -100px;
-    opacity: 0.1;
-    filter: blur(50px);
-    border-radius: 50%;
-    z-index: -1;
+    padding: 8rem 2rem;
+    background-color: var(--dark-bg);
+    color: var(--text-primary);
 }
 
 .portfolio h2 {
-    font-size: 3rem;
-    margin-bottom: 3rem;
-    color: var(--text-primary);
-    position: relative;
-    display: inline-block;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-}
-
-.portfolio h2::after {
-    content: '';
-    position: absolute;
-    width: 50%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    bottom: -12px;
-    left: 25%;
-    border-radius: 50px;
-    transition: width var(--transition-speed) ease, left var(--transition-speed) ease;
-}
-
-.portfolio h2:hover::after {
-    width: 100%;
-    left: 0;
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    font-weight: 500;
+    letter-spacing: 2px;
 }
 
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 2rem;
 }
 
 .project {
-    background: var(--card-bg);
-    padding: 1.8rem;
-    border-radius: var(--border-radius);
-    transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
-    margin: 0 auto;
-    width: 100%;
     position: relative;
+    background: rgba(15, 15, 15, 0.5);
+    border-radius: 12px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: var(--neuro-shadow);
-    display: flex;
-    flex-direction: column;
-    transform-style: preserve-3d;
-}
-
-.project::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(130deg, transparent, transparent, rgba(108, 99, 255, 0.1), transparent);
-    transform: translateX(-100%);
-    transition: transform 0.8s ease;
-}
-
-.project:hover {
-    transform: translateY(-15px) scale(1.03);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(108, 99, 255, 0.2);
-}
-
-.project:hover::before {
-    transform: translateX(100%);
+    transition: all 0.4s ease;
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .project-image {
+    width: 500px;
+    height: 250px;
     overflow: hidden;
-    border-radius: calc(var(--border-radius) - 5px);
-    position: relative;
-    aspect-ratio: 16 / 9;
 }
 
 .project-image img {
-    width: 100%;
-    height: 100%;
+    width: 500px;
+    height: 250px;
     object-fit: cover;
-    border-radius: calc(var(--border-radius) - 5px);
-    transition: transform 0.8s cubic-bezier(0.33, 1, 0.68, 1);
-    transform-origin: center;
+    transition: transform 0.6s ease;
 }
 
 .project:hover .project-image img {
-    transform: scale(1.15);
-}
-
-.project-content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+    transform: scale(1.05);
 }
 
 .project h3 {
-    margin: 1.8rem 0 1rem;
-    font-size: 1.8rem;
-    color: var(--text-primary);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    position: relative;
-    display: inline-block;
-    align-self: flex-start;
-}
-
-.project h3::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    bottom: -4px;
-    left: 0;
-    transition: width var(--transition-speed) ease;
-    border-radius: 50px;
-}
-
-.project:hover h3::after {
+    font-size: 2rem;
+    margin: 2rem auto;
+    font-weight: 500;
+    text-align: center;
     width: 100%;
 }
 
-.project p {
-    font-size: 1.05rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
+.project-description {
+    color: #666;
+    margin: 0 2rem;
+    font-size: 1.1rem;
+    text-align: center;
 }
 
-.project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: auto;
-}
-
-.project-tag {
-    font-size: 0.8rem;
-    background: rgba(108, 99, 255, 0.15);
-    color: var(--secondary-color);
-    padding: 0.25rem 0.75rem;
-    border-radius: 50px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-}
-
-.project-links {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1.5rem;
-}
-
-.project-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--primary-color);
-    font-weight: 600;
+.project-visit {
+    display: block;
+    margin: 2rem auto;
+    color: var(--text-primary);
     text-decoration: none;
-    transition: all var(--transition-speed) ease;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
+    position: relative;
+    text-align: center;
+    width: fit-content;
 }
 
-.project-link:hover {
-    color: var(--secondary-color);
-    transform: translateX(3px);
+.project-visit .arrow {
+    display: inline-block;
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.project-visit:hover .arrow {
+    transform: translateX(5px);
+}
+
+.project:hover {
+    transform: translateY(-10px);
 }
 
 /* Nowoczesna stopka z gradientem */
@@ -711,12 +594,29 @@ footer::before {
     
     .projects {
         grid-template-columns: 1fr;
-        max-width: 450px;
-        margin: 0 auto;
+        padding: 1rem;
     }
     
     .social-media {
         gap: 1.5rem;
+    }
+
+    .portfolio h2 {
+        font-size: 2.5rem;
+    }
+    
+    .projects {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    .project, .project-image, .project-image img {
+        width: 100%;
+        max-width: 500px;
+    }
+    
+    .project-image, .project-image img {
+        height: 250px;
     }
 }
 
@@ -783,108 +683,5 @@ footer::before {
     
     .nav-toggle span {
         background: var(--text-primary);
-    }
-}
-
-/* Style dla projektu WojanMC - znacznie powiększone elementy i wyśrodkowanie */
-.wojanmc-project {
-    transform: scale(1.3) !important; /* Jeszcze większy rozmiar całego kafelka */
-    max-width: 380px !important; /* Zwiększona maksymalna szerokość */
-    z-index: 10 !important; /* Wysoki z-index, aby kafelek był zawsze na wierzchu */
-    margin: 3rem auto !important; /* Większy margines dla lepszego wyśrodkowania */
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), 0 0 35px rgba(108, 99, 255, 0.4) !important; /* Mocniejszy cień */
-    position: relative !important;
-    left: 50% !important; /* Przesunięcie do środka */
-    transform: translateX(-50%) scale(1.3) !important; /* Centrowanie i skalowanie */
-}
-
-/* Kontener dla projektów - modyfikacja dla lepszego wyśrodkowania */
-.projects {
-    display: flex !important;
-    justify-content: center !important;
-    flex-wrap: wrap !important;
-}
-
-/* Ulepszenie kafelka WojanMC - bez zmiany */
-.wojanmc-project {
-    margin: 0 auto !important;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 0 15px rgba(108, 99, 255, 0.2) !important;
-    transition: all 0.4s ease !important;
-}
-
-/* Poprawione wyświetlanie zdjęcia - całe widoczne, ale większe */
-.wojanmc-image img {
-    width: auto !important;
-    height: auto !important;
-    max-width: 90% !important; /* Zwiększone z 80% na 90% */
-    max-height: 100% !important;
-    object-fit: contain !important;
-    transform: scale(1.2) !important; /* Zwiększone z 1.0 na 1.2 */
-    transition: transform 0.5s ease !important;
-    border-radius: calc(var(--border-radius) - 5px) !important;
-    margin: 0 auto !important;
-    display: block !important;
-}
-
-/* Kontener obrazu z większym paddingiem */
-.wojanmc-image {
-    overflow: hidden !important; 
-    border-radius: calc(var(--border-radius) - 5px) !important;
-    text-align: center !important;
-    padding: 15px !important; /* Zwiększony padding z 10px na 15px */
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    min-height: 180px !important; /* Dodany minimalny wymiar wysokości */
-}
-
-/* Efekt hover dla zdjęcia - nieco większy */
-.wojanmc-project:hover .wojanmc-image img {
-    transform: scale(1.3) !important; /* Zwiększone z 1.1 na 1.3 */
-}
-
-/* Subtelne ulepszenie odznaki */
-.project-badge {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15) !important;
-}
-
-/* Powiększony efekt hover dla całego kafelka */
-.wojanmc-project:hover {
-    transform: translateX(-50%) translateY(-25px) scale(1.35) !important; /* Większy skok w górę i powiększenie z zachowaniem wyśrodkowania */
-    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5), 0 0 40px rgba(108, 99, 255, 0.5) !important; /* Jeszcze mocniejszy cień */
-}
-
-/* Powiększone napisy */
-.wojanmc-project h3 {
-    font-size: 2.4rem !important;
-    margin-top: 1.5rem !important;
-    text-align: center !important; /* Wyśrodkowany tekst */
-}
-
-.wojanmc-project p {
-    font-size: 1.25rem !important;
-    text-align: center !important; /* Wyśrodkowany tekst */
-}
-
-/* Wyśrodkowane linki */
-.wojanmc-project .project-links {
-    justify-content: center !important; /* Wyśrodkowanie linków */
-}
-
-/* Wyróżniona odznaka */
-.wojanmc-project .project-badge {
-    padding: 0.7rem 1.4rem !important;
-    font-size: 1.1rem !important;
-    top: -15px !important;
-    right: -15px !important;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)) !important;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35) !important;
-}
-
-/* Dodatkowe efekty poprawiające wyśrodkowanie */
-@media (max-width: 1200px) {
-    .wojanmc-project {
-        margin: 4rem auto !important; /* Jeszcze większy margines na mniejszych ekranach */
- 
     }
 }
