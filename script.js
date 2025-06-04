@@ -1,63 +1,110 @@
-// Inicjalizacja AOS (Animacje) - tylko raz
+
+const loadingScreen = document.querySelector('.loading-screen');
+const loadingProgress = document.querySelector('.loading-progress');
+
+
+setTimeout(() => {
+    loadingScreen.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+}, 3000);
+
+
 AOS.init({
-    duration: 1000,
+    duration: 800,
     once: true,
-    disable: 'mobile' // Wyłącz na urządzeniach mobilnych dla lepszej wydajności
+    disable: 'mobile'
 });
 
-// Blokada prawego przycisku myszy (bez komunikatu)
-document.addEventListener("contextmenu", function (e) {
-    e.preventDefault(); // Zapobiega otwarciu menu kontekstowego
-});
 
-// Przewijanie strony po kliknięciu strzałki - zoptymalizowane
-const scrollDown = document.getElementById("scroll-down");
-if (scrollDown) {
-    scrollDown.addEventListener("click", () => {
-        const portfolioSection = document.getElementById("portfolio");
-        if (portfolioSection) {
-            portfolioSection.scrollIntoView({
-                behavior: "smooth"
-            });
-        }
+const sidebar = document.querySelector('.sidebar');
+const sidebarToggle = document.querySelector('.sidebar-toggle');
+let isNavbarVisible = true;
+
+if (sidebarToggle) {
+    sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('collapsed');
+        isNavbarVisible = !isNavbarVisible;
     });
 }
 
-// Płynne przewijanie do sekcji portfolio po kliknięciu w "Projekty"
-document.querySelectorAll('nav ul li a[href="#portfolio"]').forEach(link => {
-    link.addEventListener("click", function (e) {
-        e.preventDefault(); // Zapobiega domyślnej akcji linku
-        const portfolioSection = document.getElementById("portfolio");
-        if (portfolioSection) {
-            portfolioSection.scrollIntoView({
-                behavior: "smooth" // Płynne przewijanie
-            });
-        }
-    });
+
+document.addEventListener('click', (e) => {
+    if (sidebar && !sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+        sidebar.classList.remove('active');
+    }
 });
 
-// Zoptymalizowane ograniczenie przewijania strony
-let isScrolling = false;
-function limitScroll() {
-    if (isScrolling) return;
-    
-    isScrolling = true;
-    requestAnimationFrame(() => {
-        const footer = document.querySelector("footer");
-        if (footer) {
-            const maxScroll = footer.offsetTop + footer.offsetHeight - window.innerHeight;
-            if (window.scrollY > maxScroll) {
-                window.scrollTo({
-                    top: maxScroll,
-                    behavior: "auto"
-                });
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+            if (sidebar) {
+                sidebar.classList.remove('active');
             }
         }
-        isScrolling = false;
+    });
+});
+
+
+document.body.style.overflow = 'auto';
+document.body.style.height = '100%';
+document.documentElement.style.height = '100%';
+
+
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.sidebar-nav a');
+
+function updateActiveLink() {
+    let current = '';
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) {
+            link.classList.add('active');
+        }
     });
 }
 
-// Nasłuchuj zdarzenia przewijania z throttling
+window.addEventListener('scroll', updateActiveLink);
+window.addEventListener('load', updateActiveLink);
+
+
+const skillBars = document.querySelectorAll('.skill-level');
+const observerOptions = {
+    threshold: 0.5
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.width = entry.target.getAttribute('style').split('width: ')[1];
+        }
+    });
+}, observerOptions);
+
+skillBars.forEach(bar => {
+    observer.observe(bar);
+});
+
+
+document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+});
+
+
 let scrollTimeout;
 window.addEventListener("scroll", () => {
     if (!scrollTimeout) {
