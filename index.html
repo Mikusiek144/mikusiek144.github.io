@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,58 +11,136 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-<header>
-    <div class="background-png"></div>
-    <nav>
-        <div class="logo">
-            <img src="avatar.png" alt="Avatar" class="nav-avatar">
-            Mikusiek144
-        </div>
-        <ul>
-            <li><a href="#portfolio">Projects</a></li>
-        </ul>
-        <div class="nav-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
-    <div class="hero">
-        <h1 data-aos="fade-up" data-aos-delay="200">Welcome to My World</h1>
-        <p data-aos="fade-up" data-aos-delay="400">Java Developer, Web Developer</p>
-        <div class="scroll-down" data-aos="fade-up" data-aos-delay="600" id="scroll-down">
-            <span>Scroll Down</span>
-            <div class="arrow"></div>
+<div class="loading-screen">
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-avatar">
+                <img src="avatar.png" alt="Avatar">
+            </div>
+            <h2>Mikusiek144</h2>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
         </div>
     </div>
-</header>
-<section class="portfolio" id="portfolio">
-    <h2>PROJECTS</h2>
-    <div class="projects">
-        <div class="project" data-aos="fade-up" data-aos-delay="200">
-            <div class="project-image">
-                <img src="wolfhub.png" alt="Wolfhub.pl">
+</div>
+
+<aside class="sidebar">
+    <div class="sidebar-header">
+        <div class="sidebar-avatar">
+            <img src="avatar.png" alt="Avatar">
+        </div>
+        <span class="sidebar-title">Mikusiek144</span>
+    </div>
+    <ul class="sidebar-nav">
+        <li><a href="#home" title="Strona główna" class="active"><i class="fas fa-home"></i> Strona główna</a></li>
+        <li><a href="#about" title="O mnie"><i class="fas fa-user"></i> O mnie</a></li>
+        <li><a href="#portfolio" title="Projekty"><i class="fas fa-code"></i> Projekty</a></li>
+        <li><a href="#contact" title="Kontakt"><i class="fas fa-envelope"></i> Kontakt</a></li>
+    </ul>
+</aside>
+
+<main>
+    <header id="home">
+        <div class="hero">
+            <div class="hero-avatar">
+                <img src="avatar.png" alt="Avatar">
             </div>
-            <h3>Wolfhub.pl</h3>
-            <p class="project-description">Friendly website design</p>
-            <a href="https://wolfhub.pl" target="_blank" class="project-visit">
-                View <span class="arrow">→</span>
+            <div class="hero-content">
+                <p class="hero-greeting" data-aos="fade-up">Hej, jestem</p>
+                <h1 data-aos="fade-up" data-aos-delay="200">Mikusiek144</h1>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="400">Java Programmer, Static Web Developer</p>
+                <div class="hero-description" data-aos="fade-up" data-aos-delay="600">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="about" id="about">
+        <div class="section-header" data-aos="fade-up">
+            <h2>O MNIE</h2>
+            <p class="section-subtitle">Poznaj mnie lepiej</p>
+        </div>
+        <div class="about-content">
+            <div class="about-text" data-aos="fade-right">
+                <p>Cześć jestem Mikusiek. Potrafię robić statyczne strony internetowe oraz proste pluginy do minecrafta. Cały czas uczę się nowych rzeczy i staram się rozwijać swoje umiejętności.</p>
+            </div>
+            <div class="skills" data-aos="fade-left">
+                <div class="skill-item">
+                    <span>Java</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>Tworzenie Statycznych Stron</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Realizacje</h2>
+            <p class="section-subtitle">Wybrane realizacje // 2024–2025</p>
+        </div>
+        <div class="projects">
+            <div class="project" data-aos="fade-up">
+                <div class="project-image">
+                    <img src="wolfhub.png" alt="Wolfhub.pl">
+                </div>
+                <div class="project-content">
+                    <h3>Wolfhub.pl</h3>
+                    <a href="https://wolfhub.pl" target="_blank" rel="noopener noreferrer" class="project-visit">
+                        Odwiedź <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="project" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-image">
+                    <img src="wintermc.png" alt="WinterMC.pl">
+                </div>
+                <div class="project-content">
+                    <h3>WinterMC.pl</h3>
+                    <a href="https://wintermc.pl" target="_blank" rel="noopener noreferrer" class="project-visit">
+                        Odwiedź <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="section-header" data-aos="fade-up">
+            <h2>SKONTAKTUJ SIĘ</h2>
+            <p class="section-subtitle">Zróbmy coś razem</p>
+        </div>
+        <div class="social-media">
+            <a href="https://github.com/Mikusiek144" target="_blank" class="social-link" data-aos="fade-up" data-aos-delay="200">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+            </a>
+            <a href="https://discord.com/users/819177818864746496" target="_blank" class="social-link" data-aos="fade-up" data-aos-delay="400">
+                <i class="fab fa-discord"></i>
+                <span>Discord</span>
+            </a>
+            <a href="https://www.youtube.com/@Mikusiek144" target="_blank" class="social-link" data-aos="fade-up" data-aos-delay="600">
+                <i class="fab fa-youtube"></i>
+                <span>YouTube</span>
             </a>
         </div>
-    </div>
-</section>
-<footer id="contact">
-    <div class="footer-top">
-        <div class="social-media" data-aos="fade-up" data-aos-delay="200">
-            <a href="https://github.com/Mikusiek144" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://discord.com/users/819177818864746496" target="_blank"><i class="fab fa-discord"></i></a>
-            <a href="https://www.youtube.com/@Mikusiek144" target="_blank"><i class="fab fa-youtube"></i></a>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p> 2025 Mikusiek144</p>
-    </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2025 Mikusiek144</p>
+    <p class="made-with">Made with <i class="fas fa-heart"></i></p>
 </footer>
+
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="script.js"></script>
 </body>
