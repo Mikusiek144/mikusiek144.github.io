@@ -17,28 +17,25 @@
             <div class="loader-avatar">
                 <img src="avatar.png" alt="Avatar">
             </div>
-            <h2>Mikusiek144</h2>
-            <div class="loading-bar">
-                <div class="loading-progress"></div>
+            <div class="pulse-loader">
+                <span></span><span></span><span></span>
             </div>
         </div>
     </div>
 </div>
 
-<aside class="sidebar">
-    <div class="sidebar-header">
-        <div class="sidebar-avatar">
-            <img src="avatar.png" alt="Avatar">
-        </div>
-        <span class="sidebar-title">Mikusiek144</span>
-    </div>
-    <ul class="sidebar-nav">
-        <li><a href="#home" title="Strona główna" class="active"><i class="fas fa-home"></i> Strona główna</a></li>
-        <li><a href="#about" title="O mnie"><i class="fas fa-user"></i> O mnie</a></li>
-        <li><a href="#portfolio" title="Projekty"><i class="fas fa-code"></i> Projekty</a></li>
-        <li><a href="#contact" title="Kontakt"><i class="fas fa-envelope"></i> Kontakt</a></li>
-    </ul>
-</aside>
+<nav class="top-navbar">
+  <div class="navbar-left">
+    <img src="avatar.png" alt="Avatar" class="navbar-avatar">
+  </div>
+</nav>
+<nav class="main-navbar">
+  <div class="nav-highlight"></div>
+  <a href="#top" class="nav-btn active" data-index="0"><i class="fas fa-home"></i> Główna</a>
+  <a href="#about" class="nav-btn" data-index="1"><i class="fas fa-user"></i> O mnie</a>
+  <a href="#portfolio" class="nav-btn" data-index="2"><i class="fas fa-code"></i> Realizacje</a>
+  <a href="#contact" class="nav-btn" data-index="3"><i class="fas fa-paper-plane"></i> Kontakt</a>
+</nav>
 
 <main>
     <header id="home">
@@ -64,19 +61,19 @@
         </div>
         <div class="about-content">
             <div class="about-text" data-aos="fade-right">
-                <p>Cześć jestem Mikusiek. Potrafię robić statyczne strony internetowe oraz proste pluginy do minecrafta. Cały czas uczę się nowych rzeczy i staram się rozwijać swoje umiejętności.</p>
+                <p>Cześć! mam na imię Piotrek. Tworzę niewielkie, proste strony internetowe oraz mało-zaawansowane pluginy do Minecrafta. Lubię, gdy moje projekty są dopracowane i działają tak, jak trzeba. Cały czas uczę się nowych rzeczy i rozwijam swoje umiejętności, żeby z każdym projektem robić coś lepiej. Chętnie podejmuję się nowych wyzwań i stale staram się iść do przodu.</p>
             </div>
             <div class="skills" data-aos="fade-left">
                 <div class="skill-item">
                     <span>Java</span>
                     <div class="skill-bar">
-                        <div class="skill-level" style="width: 75%"></div>
+                        <div class="skill-level" style="width: 55%"></div>
                     </div>
                 </div>
                 <div class="skill-item">
-                    <span>Tworzenie Statycznych Stron</span>
+                    <span>Strony WWW</span>
                     <div class="skill-bar">
-                        <div class="skill-level" style="width: 90%"></div>
+                        <div class="skill-level" style="width: 70%"></div>
                     </div>
                 </div>
             </div>
@@ -88,58 +85,84 @@
             <h2>Realizacje</h2>
             <p class="section-subtitle">Wybrane realizacje // 2024–2025</p>
         </div>
-        <div class="projects">
-            <div class="project" data-aos="fade-up">
-                <div class="project-image">
-                    <img src="wolfhub.png" alt="Wolfhub.pl">
+        <div class="realizations">
+            <div class="realization-card reverse" data-aos="fade-right">
+                <div class="realization-content">
+                    <h3 class="realization-title">Strona WinterMC</h3>
+                    <div class="realization-meta">
+                        <span class="realization-badge">2024</span>
+                        <span class="realization-dot">•</span>
+                        <span class="realization-author">Współpraca: Ernestozilla</span>
+                    </div>
+                    
                 </div>
-                <div class="project-content">
-                    <h3>Wolfhub.pl</h3>
-                    <a href="https://wolfhub.pl" target="_blank" rel="noopener noreferrer" class="project-visit">
-                        Odwiedź <i class="fas fa-external-link-alt"></i>
-                    </a>
+                <div class="realization-img">
+                    <img src="wintermc.png" alt="Strona WinterMC" data-img="wintermc.png">
                 </div>
             </div>
-            <div class="project" data-aos="fade-up" data-aos-delay="200">
-                <div class="project-image">
-                    <img src="wintermc.png" alt="WinterMC.pl">
+            <div class="realization-card reverse" data-aos="fade-left" data-aos-delay="150">
+                <div class="realization-content">
+                    <h3 class="realization-title">Strona WolfHub</h3>
+                    <div class="realization-meta">
+                        <span class="realization-badge">2025</span>
+                        <span class="realization-dot">•</span>
+                        <span class="realization-author">Współpraca: w1lczeek2</span>
+                    </div>
+                    
                 </div>
-                <div class="project-content">
-                    <h3>WinterMC.pl</h3>
-                    <a href="https://wintermc.pl" target="_blank" rel="noopener noreferrer" class="project-visit">
-                        Odwiedź <i class="fas fa-external-link-alt"></i>
-                    </a>
+                <div class="realization-img">
+                    <img src="wolfhub.png" alt="Strona WolfHub" data-img="wolfhub.png">
                 </div>
             </div>
         </div>
     </section>
 
     <section class="contact" id="contact">
-        <div class="section-header" data-aos="fade-up">
-            <h2>SKONTAKTUJ SIĘ</h2>
-            <p class="section-subtitle">Zróbmy coś razem</p>
+        <div class="section-header" data-aos="fade-down">
+            <h2>Kontakt</h2>
+            <p class="section-subtitle">Skontaktuj się ze mną i opowiedz o swoim projekcie. Zrobię dla Ciebie coś wyjątkowego!</p>
         </div>
-        <div class="social-media">
-            <a href="https://github.com/Mikusiek144" target="_blank" class="social-link" data-aos="fade-up" data-aos-delay="200">
-                <i class="fab fa-github"></i>
-                <span>GitHub</span>
-            </a>
-            <a href="https://discord.com/users/819177818864746496" target="_blank" class="social-link" data-aos="fade-up" data-aos-delay="400">
-                <i class="fab fa-discord"></i>
-                <span>Discord</span>
-            </a>
-            <a href="https://www.youtube.com/@Mikusiek144" target="_blank" class="social-link" data-aos="fade-up" data-aos-delay="600">
-                <i class="fab fa-youtube"></i>
-                <span>YouTube</span>
-            </a>
+        <div class="contact-content">
+            <div class="contact-cards" data-aos="flip-left">
+                <div class="contact-card" data-type="email" data-mail="biznesmikusiek@gmail.com" title="Wyślij maila">
+                    <div class="card-icon"><i class="fas fa-paper-plane"></i></div>
+                    <div class="card-content">
+                        <h3>Email</h3>
+                        <p><a class="contact-link" href="mailto:biznesmikusiek@gmail.com">biznesmikusiek@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="contact-card" data-type="discord" data-discord="noisy144" title="Kliknij lub przytrzymaj, aby skopiować">
+                    <div class="card-icon"><i class="fab fa-discord"></i></div>
+                    <div class="card-content">
+                        <h3>Discord</h3>
+                        <p><button class="contact-link btn-link" type="button" aria-label="Skopiuj discord">
+                            <i class="fas fa-copy copy-icon" aria-hidden="true"></i> noisy144
+                        </button></p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="card-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="card-content">
+                        <h3>Szybka realizacja</h3>
+                        <p>Projekty w 24-48h</p>
+                        <span class="card-btn disabled">Gwarantowane</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </main>
 
+<div class="realization-modal" id="realizationModal">
+    <div class="realization-modal-img-wrap">
+        <button class="close-modal" id="closeModalBtn" aria-label="Zamknij podgląd">&times;</button>
+        <img src="" alt="Podgląd realizacji" id="modalImg">
+    </div>
+</div>
+
 <footer>
-    <a href="https://beta.mikusiek144.space" target="_blank" rel="noopener noreferrer" class="beta-link">Wypróbuj coś nowego – beta.mikusiek144.space</a>
-    <p>© 2025 Mikusiek144</p>
-    <p class="made-with">Made with <i class="fas fa-heart"></i></p>
+  <p>© 2025 Mikusiek144</p>
+  <p class="made-with">Made with <i class="fas fa-heart"></i></p>
 </footer>
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
