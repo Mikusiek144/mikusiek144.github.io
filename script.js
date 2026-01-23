@@ -6,7 +6,7 @@ const loadingProgress = document.querySelector('.loading-progress');
 setTimeout(() => {
     loadingScreen.classList.add('hidden');
     document.body.style.overflow = 'auto';
-}, 3000);
+}, 1700);
 
 
 AOS.init({
